@@ -2,11 +2,12 @@
  - node js
  - MongoDB with Mongoose
  - TypeScript
- - Express & express middleware
+ - Express.js & Express.js middleware
+ - Zod validation
 
 
 Following example tutorial:
-https://www.youtube.com/watch?v=goUbHgAzPCs&ab_channel=TomDoesTech
+https://www.youtube.com/watch?v=BWUi6BS9T5Y&ab_channel=TomDoesTech
 
 Build out post CRUD operations:
  
