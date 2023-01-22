@@ -17,4 +17,7 @@ Build out post CRUD operations:
  - service
  - database
 
- 
+## HTTP status codes
+
+409 Conflict
+Indicates that the request could not be processed because of conflict in the current state of the resource, such as an edit conflict between multiple simultaneous updates.

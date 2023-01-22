@@ -1,5 +1,5 @@
 export default {
-    port: 1337,
+    port: 1338,
     dbUri: "mongodb://root:rootpassword@localhost:27017/admin",
     saltWorkFactor: 10,
     accessTokenTtl: "15m",
