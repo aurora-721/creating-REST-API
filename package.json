@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --config nodemon.json src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -17,8 +18,9 @@
     "mongoose": "^6.8.4",
     "nanoid": "^4.0.0",
     "pino": "^8.8.0",
-    "pino-pretty": "7.1.0",
-    "yup": "^0.32.11"
+    "pino-pretty": "^9.1.1",
+    "yup": "^0.32.11",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -34,6 +36,7 @@
     "@types/pino": "^7.0.5",
     "@types/yup": "^0.32.0",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.4"
   }
 }
