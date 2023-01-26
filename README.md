@@ -8,7 +8,12 @@ https://www.youtube.com/watch?v=BWUi6BS9T5Y&ab_channel=TomDoesTech
  - Express.js & Express.js middleware
  - Zod validation
 
-## Anatomy of REST:
+## What is REST
+REST stands for Representational State Transfer, a term coined by Roy Fielding in 2000. It is an architecture style for designing loosely coupled applications over the network, that is often used in the development of web services.
+
+
+
+### Anatomy of REST:
 Endpoint: it is the URL where the REST Server is listening.
 Method: REST implements multiple 'methods' for different types of request, the following are most popular:
 - GET: Get resource from the server.
