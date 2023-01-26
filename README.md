@@ -249,3 +249,6 @@ not responsible for making decisions about the "bigger" picture orchestrating th
 
 ### utils
 General utility functions
+
+## res.locals
+The res.locals is an object that contains the local variables for the response which are scoped to the request only and therefore just available for the views rendered during that request or response cycle.
