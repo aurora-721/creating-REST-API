@@ -183,3 +183,69 @@ The API response is the generic error message, given when an unexpected conditio
 
 ### 501 (Not Implemented)
 The server either does not recognize the request method, or it cannot fulfill the request. Usually, this implies future availability (e.g., a new feature of a web-service API).
+
+## Resource archetypes
+Resource archetypes into four categories (documents, collection, store and controller).
+
+#### document 
+A document resource is a singular concept that is akin to an object instance or database record.
+
+In REST, you can view it as a single resource inside resource collection. A document’s state representation typically includes both fields with values and links to other related resources.
+
+#### collection
+A collection resource is a server-managed directory of resources. A collection of resources.
+
+### store
+A store is a client-managed resource repository. Data that is managed by client, they can delete, request for data etc.
+```
+http://api.example.com/song-management/users/{id}/playlists
+```
+
+### controller
+A controller resource models a procedural concept. 
+
+Controller resources are like executable functions, with parameters and return values, inputs, and outputs.
+```
+http://api.example.com/cart-management/users/{id}/cart/checkout
+```
+
+## Structure of the folders
+
+### controller
+Collection of executable fuctions that preform some sort of action.
+
+### middleware
+Functions that are executed between the request and response.
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+
+### models
+Models that define how to structure the data in the database.
+
+### schema
+Checks that are preformed with the help of Zod on the body of the request to check if the data requested matches the requirements. For example if password is long enough.
+
+### service
+Using the worker/manager analogy, the controller is the manager, while the service is the worker.
+
+A controller:
+ - manages the incoming work HTTP requests
+ - decides which worker what service should do the work
+ - splits up the work into sizable units
+ - passes that work the necessary data from the HTTP requests off to the service(s)
+ - if the work requires multiple people services working on multiple things, orchestrates the work those service calls
+ - but does not do the work himself/herself (again, using a basic stereotype here!) (not a stereotype here, the controller shouldn't be doing the work)
+
+And a service:
+
+ - receives the request data it needs from the manager in order to perform its tasks
+figures out the individual details algorithms/business logic/database calls/etc involved in completing the request
+ - is generally only concerned with the tasks he/she has to complete
+not responsible for making decisions about the "bigger" picture orchestrating the different service calls
+ - does the actual work necessary to complete the tasks/request
+ - returns the completed work a response to the manager
+
+>**Note:** Using services in API's is something I don't often see in Node-land, but is such a powerful addition to the structure of your API that will make it much easier for testing, code organization, and code re-use.
+
+### utils
+General utility functions
